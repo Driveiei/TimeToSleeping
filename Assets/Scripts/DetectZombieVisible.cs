@@ -7,10 +7,15 @@ public class DetectZombieVisible : MonoBehaviour
     private Animator animator;
     [SerializeField]
     NavMeshAgent agent;
+    public static bool IsVisibleToCamera(Transform transform)
+    {
+        Vector3 vis = Camera.main.WorldToViewportPoint(transform.position);
+        return (vis.x >= 0 && vis.y >= 0) && (vis.x <= 1 && vis.y <= 1) && vis.z >= 0;
+    }
 
     private void Update()
     {
-        if (GetComponent<Renderer>().isVisible)
+        if (IsVisibleToCamera(transform))
         {
             animator.SetTrigger("Freeze");
             print("Freeze");

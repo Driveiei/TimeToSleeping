@@ -12,7 +12,6 @@ public class SampleAnimation : MonoBehaviour
     private const string key_isRun = "IsRun";
     private const string key_isAttack01 = "IsAttack01";
     private const string key_isAttack02 = "IsAttack02";
-    private const string key_isJump = "IsJump";
     private const string key_isDamage = "IsDamage";
     private const string key_isDead = "IsDead";
     // 初期化メソッド

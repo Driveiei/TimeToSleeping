@@ -7,12 +7,15 @@ public class ZombieController : MonoBehaviour
     GameObject target;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private float zombieSpeed = 3.6f;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
+        agent.speed = zombieSpeed;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
